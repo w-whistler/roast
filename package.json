@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "fix": "npm run fix-formatting && npm run fix-lint && tsc",
+    "fix-lint": "npx eslint --fix './**/*.{js,ts,tsx}'",
+    "fix-formatting": "npx prettier --write './**/*.{js,md,tsx,ts}'",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
