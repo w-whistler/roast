@@ -1,5 +1,13 @@
 import Image from 'next/image';
 
 export default function Header() {
-  return <Image src="/logo.png" alt="Roast Logo" width={125} height={30} />;
+  return (
+    <Image
+      src="/logo.png"
+      alt="Roast Logo"
+      width={125}
+      height={30}
+      className="z-50 mx-auto mt-[80px]"
+    />
+  );
 }

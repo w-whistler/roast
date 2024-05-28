@@ -1,3 +1,6 @@
 import Header from './header';
+import Dropzone from './dropzone';
 
-export { Header };
+export * from './ui';
+
+export { Header, Dropzone };

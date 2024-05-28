@@ -3,6 +3,7 @@ import './globals.css';
 import { cn } from '../lib/utils';
 import { fontPlusJakartaSans } from '../lib/fonts';
 import { Header } from '../components';
+import ActivitiesProvider from '../contexts/activitiesContext';
 
 export const metadata: Metadata = {
   title: 'Roast',
@@ -18,12 +19,14 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'min-h-screen bg-background antialiased',
+          'flex min-h-screen flex-col bg-background text-base antialiased',
           fontPlusJakartaSans.className,
         )}
       >
-        <Header />
-        {children}
+        <ActivitiesProvider>
+          <Header />
+          <div className="flex flex-1 flex-col px-[30px]">{children}</div>
+        </ActivitiesProvider>
       </body>
     </html>
   );
