@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { cn } from '../lib/utils';
 import { fontPlusJakartaSans } from '../lib/fonts';
+import { Header } from '../components';
 
 export const metadata: Metadata = {
   title: 'Roast',
@@ -21,6 +22,7 @@ export default function RootLayout({
           fontPlusJakartaSans.className,
         )}
       >
+        <Header />
         {children}
       </body>
     </html>
