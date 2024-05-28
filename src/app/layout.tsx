@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
+import { cn } from '../lib/utils';
+import { fontPlusJakartaSans } from '../lib/fonts';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          'min-h-screen bg-background antialiased',
+          fontPlusJakartaSans.className,
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
