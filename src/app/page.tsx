@@ -37,7 +37,12 @@ export default function Home() {
 
   if (isUploading) {
     return (
-      <div className="flex w-full flex-1 flex-col items-center justify-center">
+      <div
+        className={cn(
+          styles.loadingContainer,
+          'flex min-h-screen w-full flex-1 flex-col items-center justify-center',
+        )}
+      >
         <Image
           src="/images/landing-page/loading-heart.png"
           alt="Loading"
@@ -54,12 +59,17 @@ export default function Home() {
   }
 
   return (
-    <div className="flex w-full flex-1 flex-col">
+    <div
+      className={cn(
+        styles.container,
+        'flex min-h-screen w-full flex-col justify-between pt-[80px]',
+      )}
+    >
       <h1 className="mt-[75px] text-center text-4xl">Upload your data</h1>
       <div
         className={cn(
-          'mx-[-30px] mt-[75px] flex-1 rounded-t-[42px] px-[24px] pb-[50px] pt-[32px]',
-          styles.dropZone,
+          'mt-[75px] rounded-t-[42px] px-[24px] pb-[50px] pt-[32px]',
+          styles.dropContainer,
         )}
       >
         <div className="text-center">

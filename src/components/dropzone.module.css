@@ -1,6 +1,9 @@
 .root {
   box-shadow: 20px 20px 30px 0px #222343 inset;
-  background: #27324D;
+  background-color: #27324D;
+  background: url('/images/landing-page/download-icon.svg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .fileAccepted {

@@ -1,4 +1,19 @@
-.dropZone {
-  background: linear-gradient(272.48deg, rgba(101, 98, 226, 0.15) 4.97%, rgba(255, 255, 255, 0) 104.25%);
+.container {
+  background: url('/images/landing-page/background.png');
+}
+
+.dropContainer {
+  background: url('/images/landing-page/dropzone-background.svg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
   box-shadow: 0px 23px 36.2px 0px #474E7033;
+  background-color: #1C1F37;
+}
+
+.loadingContainer {
+  background: url('/images/landing-page/loading-background.svg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

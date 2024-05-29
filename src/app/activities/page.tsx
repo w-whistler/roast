@@ -10,6 +10,8 @@ import {
 } from '../../constants';
 import { ActivitiesContext } from '../../contexts/activitiesContext';
 import Activities from '../../components/activities/activities';
+import styles from './page.module.css';
+import { cn } from '../../lib/utils';
 
 export default function ActivitiesOverview() {
   const router = useRouter();
@@ -26,7 +28,12 @@ export default function ActivitiesOverview() {
   }
 
   return (
-    <div className="flex-1">
+    <div
+      className={cn(
+        styles.container,
+        'min-h-screen flex-1 px-[30px] pt-[80px]',
+      )}
+    >
       <h1 className="mt-[38px] text-center text-4xl">App Opened</h1>
       <Activities activities={activities} />
       <div className="mt-[21px] flex items-center justify-between rounded-[82px] bg-white bg-opacity-10 px-[32px] py-[16px]">

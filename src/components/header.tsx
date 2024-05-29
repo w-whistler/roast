@@ -7,7 +7,7 @@ export default function Header() {
       alt="Roast Logo"
       width={125}
       height={30}
-      className="z-50 mx-auto mt-[80px]"
+      className="absolute left-1/2 top-[80px] z-50 mx-auto -translate-x-1/2"
     />
   );
 }

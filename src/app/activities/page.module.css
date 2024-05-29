@@ -1,0 +1,6 @@
+.container {
+  background: url('/images/activities/background.svg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

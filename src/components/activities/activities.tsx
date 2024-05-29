@@ -1,6 +1,8 @@
 import { Fragment } from 'react';
 import { Activities as ActivitiesType } from '../../models/activities.model';
 import ActivityBlock from './activity-block';
+import styles from './activities.module.css';
+import { cn } from '../../lib/utils';
 
 type ActivitiesProps = {
   activities: ActivitiesType;
@@ -54,7 +56,12 @@ const months = [
 
 export default function Activities({ activities }: ActivitiesProps) {
   return (
-    <div className="mt-[36px] grid grid-cols-8 gap-[8px] rounded-[24px] bg-white bg-opacity-15 px-[4px] py-[24px] text-xs">
+    <div
+      className={cn(
+        styles.activitiesContainer,
+        'mt-[36px] grid grid-cols-8 gap-[8px] rounded-[24px] bg-white bg-opacity-30 py-[24px] pe-[18px] ps-[4px] text-xs',
+      )}
+    >
       <div />
       {days.map((day) => (
         <div key={day.key} className="text-center">

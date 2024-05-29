@@ -1,7 +1,6 @@
 'use client';
 
 import { useDropzone } from 'react-dropzone';
-import Image from 'next/image';
 import styles from './dropzone.module.css';
 import { cn } from '../lib/utils';
 
@@ -12,7 +11,6 @@ type DropzoneProps = {
 
 export default function Dropzone({ className, onDropFile }: DropzoneProps) {
   const { isDragAccept, isDragReject, getRootProps } = useDropzone({
-    noClick: true,
     accept: {
       'application/json': ['.json'],
       // 'application/zip': ['.zip'], TODO: For now only JSON file is acceptable in test mode
@@ -26,7 +24,7 @@ export default function Dropzone({ className, onDropFile }: DropzoneProps) {
         className: cn(
           styles.root,
           className,
-          'flex h-[230px] w-full items-center justify-center rounded-[46px]',
+          'h-[230px] w-full rounded-[46px]',
           isDragAccept
             ? styles.fileAccepted
             : isDragReject
@@ -34,13 +32,6 @@ export default function Dropzone({ className, onDropFile }: DropzoneProps) {
               : '',
         ),
       })}
-    >
-      <Image
-        src="/images/landing-page/download-icon.svg"
-        alt="Download Icon"
-        width={100}
-        height={75}
-      />
-    </div>
+    />
   );
 }

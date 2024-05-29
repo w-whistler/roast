@@ -25,7 +25,7 @@ export default function RootLayout({
       >
         <ActivitiesProvider>
           <Header />
-          <div className="flex flex-1 flex-col px-[30px]">{children}</div>
+          <div>{children}</div>
         </ActivitiesProvider>
       </body>
     </html>
