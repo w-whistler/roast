@@ -48,6 +48,7 @@ export default function Home() {
           alt="Loading"
           width={242}
           height={320}
+          className="animate-pulse"
         />
         <h1 className="mt-12px text-center text-4xl">
           Uploading your
@@ -85,14 +86,13 @@ export default function Home() {
           file here
         </div>
         <Dropzone className="mt-[30px]" onDropFile={handleDropFile} />
-        {selectedFile && (
-          <Button
-            className="mt-[24px] min-h-[72px] w-full rounded-[30px]"
-            onClick={handleUploadFile}
-          >
-            Upload {selectedFile.name}
-          </Button>
-        )}
+        <Button
+          className="mt-[24px] min-h-[72px] w-full rounded-[30px]"
+          onClick={handleUploadFile}
+          disabled={!selectedFile}
+        >
+          Upload {selectedFile ? selectedFile.name : 'your file'}
+        </Button>
       </div>
     </div>
   );

@@ -3,58 +3,19 @@ import { Activities as ActivitiesType } from '../../models/activities.model';
 import ActivityBlock from './activity-block';
 import styles from './activities.module.css';
 import { cn } from '../../lib/utils';
+import { DAYS, MONTHS } from '../../constants';
 
 type ActivitiesProps = {
   activities: ActivitiesType;
+  selectedActivity?: string;
+  onSelectActivity: (activity: string) => void;
 };
 
-const days = [
-  {
-    label: 'S',
-    key: 'sunday',
-  },
-  {
-    label: 'M',
-    key: 'monday',
-  },
-  {
-    label: 'T',
-    key: 'tuesday',
-  },
-  {
-    label: 'W',
-    key: 'wednesday',
-  },
-  {
-    label: 'T',
-    key: 'thursday',
-  },
-  {
-    label: 'F',
-    key: 'friday',
-  },
-  {
-    label: 'S',
-    key: 'saturday',
-  },
-];
-
-const months = [
-  'jan',
-  'feb',
-  'mar',
-  'apr',
-  'may',
-  'jun',
-  'jul',
-  'aug',
-  'sep',
-  'oct',
-  'nov',
-  'dec',
-];
-
-export default function Activities({ activities }: ActivitiesProps) {
+export default function Activities({
+  activities,
+  selectedActivity,
+  onSelectActivity,
+}: ActivitiesProps) {
   return (
     <div
       className={cn(
@@ -63,18 +24,24 @@ export default function Activities({ activities }: ActivitiesProps) {
       )}
     >
       <div />
-      {days.map((day) => (
-        <div key={day.key} className="text-center">
-          {day.label}
+      {DAYS.map((day) => (
+        <div key={day} className="text-center uppercase">
+          {day.charAt(0)}
         </div>
       ))}
-      {months.map((month) => (
+      {MONTHS.map((month) => (
         <Fragment key={month}>
           <div className="text-right capitalize">{month}</div>
-          {days.map((day) => (
+          {DAYS.map((day) => (
             <ActivityBlock
-              key={`${month}-${day.key}`}
-              value={activities?.results.app_opens[day.key][month] ?? 0}
+              key={`${month}-${day}`}
+              value={activities?.results.app_opens[day][month] ?? 0}
+              onClick={() => onSelectActivity(`${month}-${day}`)}
+              opacity={
+                !selectedActivity || selectedActivity === `${month}-${day}`
+                  ? 1
+                  : 0.2
+              }
             />
           ))}
         </Fragment>

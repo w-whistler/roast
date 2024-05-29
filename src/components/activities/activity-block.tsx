@@ -9,24 +9,28 @@ type ActivityBlockProps = {
   className?: string;
   size?: number;
   value: number;
+  opacity?: number;
+  onClick?: () => void;
 };
 
 export default function ActivityBlock({
   className,
   size = 32,
   value,
+  opacity = 1,
+  onClick,
 }: ActivityBlockProps) {
-  const getBlockBgOpacity = () => {
+  const getBlockBgColor = () => {
     if (value < ACTIVITY_LEVEL_ONE) {
-      return 1;
+      return '#03FFD1';
     }
     if (value < ACTIVITY_LEVEL_TWO) {
-      return 0.7;
+      return '#02CBA6';
     }
     if (value < ACTIVITY_LEVEL_THREE) {
-      return 0.5;
+      return '#02997E';
     }
-    return 0.2;
+    return '#026754';
   };
 
   return (
@@ -35,8 +39,10 @@ export default function ActivityBlock({
       style={{
         width: size,
         height: size,
-        backgroundColor: `rgba(3, 255, 209, ${getBlockBgOpacity()})`,
+        backgroundColor: getBlockBgColor(),
+        opacity,
       }}
+      onClick={onClick}
     />
   );
 }

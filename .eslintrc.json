@@ -54,6 +54,7 @@
       }
     }],
     "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/heading-has-content": "off",
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "react/jsx-no-constructed-context-values": "off",
@@ -62,6 +63,7 @@
     "no-shadow": "off",
     "no-use-before-define": "off",
     "no-nested-ternary": "off",
+    "react/prop-types": "off",
     "react/no-array-index-key": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }]
